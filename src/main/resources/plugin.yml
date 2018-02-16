@@ -1,0 +1,7 @@
+name: Valv
+version: ${project.version}
+main: io.github.gitgideon.valv.Valv
+authors: [GitGideon]
+description: Valv of common API's for Bukkit plugins
+website: https://github.com/GitGideon/Valv
+soft-depend: [Essentials]
