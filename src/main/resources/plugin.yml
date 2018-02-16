@@ -1,4 +1,4 @@
-name: Valv
+name: Valv-Minimal
 version: ${project.version}
 main: io.github.gitgideon.valv.Valv
 authors: [GitGideon]
