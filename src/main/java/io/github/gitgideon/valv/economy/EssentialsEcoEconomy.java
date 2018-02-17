@@ -14,13 +14,11 @@ public class EssentialsEcoEconomy implements ValvEconomy {
 
     private final EconomyResponse unimplemented = new EconomyResponse(
             0, 0,
-            EconomyResponse.ResponseType.NOT_IMPLEMENTED, "Essentials Eco does not support bank accouns!");
+            EconomyResponse.ResponseType.NOT_IMPLEMENTED, "Essentials Eco does not support bank accounts!");
 
     public EssentialsEcoEconomy(Valv plugin) {
         Plugin essentials = plugin.getServer().getPluginManager().getPlugin("Essentials");
-        if (essentials != null && essentials.isEnabled()) {
-            plugin.getLogger().info("Hooked Valv into Essentials");
-        }
+        plugin.getLogger().info("Hooked Valv into Essentials");
     }
 
     @Override
