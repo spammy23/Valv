@@ -56,17 +56,37 @@ public interface ValvEconomy {
      */
     String currencyNamePlural();
 
+    /**
+     * Returns whether or not the player has an account
+     *
+     * @param playerName The player to check against
+     * @return whether or not the player has an account
+     */
     boolean hasAccount(String playerName);
 
     boolean hasAccount(String playerName, String worldName);
 
+    /**
+     * Returns the balance of the player's account
+     *
+     * @param playerName The name of the player assigned to the account
+     * @return The balance of the account
+     */
     double getBalance(String playerName);
 
     double getBalance(String playerName, String worldName);
 
+    /**
+     * Checks whether the player has at least a certain amount of money
+     *
+     * @param playerName The name of the player
+     * @param amount The amount to check that the player has
+     * @return Whether or not the player has at least the amount specified
+     */
     boolean has(String playerName, double amount);
 
     boolean has(String playerName, String worldName, double amount);
+
 
     EconomyResponse withdrawPlayer(String playerName, double amount);
 
@@ -88,9 +108,23 @@ public interface ValvEconomy {
 
     EconomyResponse bankDeposit(String name, double amount);
 
-    EconomyResponse isBankOwner(String name, String playerName);
+    /**
+     * Checks whether or not a certain player owns the bank
+     *
+     * @param bankName The name of the bank
+     * @param playerName The name of the player
+     * @return Whether or not the player owns the bank
+     */
+    EconomyResponse isBankOwner(String bankName, String playerName);
 
-    EconomyResponse isBankMember(String name, String playerName);
+    /**
+     * Checks whether or not a certain player is a member of a bank
+     *
+     * @param bankName The name of the bank
+     * @param playerName THe name of the player
+     * @return
+     */
+    EconomyResponse isBankMember(String bankName, String playerName);
 
     List<String> getBanks();
 

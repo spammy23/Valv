@@ -2,10 +2,10 @@ package io.github.gitgideon.valv.api;
 
 public class EconomyResponse {
 
-    public double amount;
-    public double balance;
-    public ResponseType type;
-    public String errorMessage;
+    private final double amount;
+    private final double balance;
+    private final ResponseType type;
+    private final String errorMessage;
 
     /**
      * @param amount       Amount modified
@@ -25,8 +25,24 @@ public class EconomyResponse {
      *
      * @return true if the transaction was successful, otherwise false
      */
-    public boolean transactionSuccess() {
+    public final boolean transactionSuccess() {
         return type == ResponseType.SUCCESS;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public ResponseType getType(){
+        return type;
     }
 
     public enum ResponseType {

@@ -2,14 +2,19 @@ package io.github.gitgideon.valv.api;
 
 public class ValvAPI {
 
-    public static ValvEconomy economy = null;
+    private static ValvEconomy economy = null;
 
     /**
      * Register a ValvEconomy instance
-     * @param econ the ValvEconomy instance you want to register
+     * @param economy the ValvEconomy instance you want to register
      */
-    public static void registerValvEconomy(ValvEconomy econ) {
-        economy = econ;
+    public static void registerValvEconomy(ValvEconomy economy) {
+        if(ValvAPI.economy != null){
+            throw new UnsupportedOperationException(/*TODO: add text here*/);
+        }
+        else {
+            ValvAPI.economy = economy;
+        }
     }
 
 }
